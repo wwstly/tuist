@@ -1,0 +1,26 @@
+# main.py
+
+from scripts.protocol_tracking import fetch_protocol_data
+from scripts.liquidity_pool_analysis import get_liquidity_pool_data, analyze_liquidity_pool
+from scripts.yield_farming import get_yield_farming_opportunities, analyze_yield_farming
+from scripts.lending_borrowing import get_lending_borrowing_rates, analyze_lending_borrowing_rates
+from scripts.alerts import trigger_alert
+from utils.data_utils import save_data, load_json
+
+def main():
+    # Example: Fetch protocol data
+    protocol_data = fetch_protocol_data('https://api.defi.example.com', 'uniswap')
+    print(protocol_data)
+    
+    # Example: Get and analyze liquidity pool data
+    pool_data = get_liquidity_pool_data('https://api.defi.example.com', 'poolId')
+    analysis_results = analyze_liquidity_pool(pool_data)
+    print(analysis_results)
+    
+    # Example: Get and analyze yield farming opportunities
+    opportunities = get_yield_farming_opportunities('https://api.defi.example.com')
+    farming_analysis = analyze_yield_farming(opportunities)
+    print(farming_analysis)
+    
+    # Example: Get and analyze lending and borrowing rates
+    rates = get_lending_borrowing_rates('https://
